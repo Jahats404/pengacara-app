@@ -49,7 +49,7 @@ class AuthController extends Controller
                 return redirect()->route('admin.dashboard');
             }
             elseif ($user->role_id == '2') {
-                return redirect()->route('founder.dashboard');
+                return redirect()->route('client.dashboard');
             }
         }
 
@@ -90,6 +90,15 @@ class AuthController extends Controller
         $user->role_id = 2; 
         $user->save();
 
-        return redirect()->route('login')->wih('success', 'Berhasil registrasi');
+        return redirect()->route('login')->with('success', 'Berhasil registrasi');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login')
+            ->withSuccess('Anda berhasil logout');
     }
 }

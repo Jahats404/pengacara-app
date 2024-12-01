@@ -75,6 +75,8 @@
 
     </div>
 
+    @include('validasi.notifikasi')
+    @include('validasi.notifikasi-error')
     <!-- Bootstrap core JavaScript-->
     <script src="dashboard/vendor/jquery/jquery.min.js"></script>
     <script src="dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
