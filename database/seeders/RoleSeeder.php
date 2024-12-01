@@ -19,7 +19,7 @@ class RoleSeeder extends Seeder
         ]);
         Role::create([
             'id_role' => '2',
-            'level' => 'pengawas',
+            'level' => 'client',
         ]);
     }
 }
